@@ -1,0 +1,3 @@
+Hello, this is spark RDD persist test.
+In this test case we will do 2 transforms the spark RDD that generated after file read.
+And then later apply actions.

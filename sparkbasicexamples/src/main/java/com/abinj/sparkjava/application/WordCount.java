@@ -14,7 +14,7 @@ import java.util.Arrays;
  * arg_1 is input file path
  * arg_2 is output file path
  * **/
-public class MainApplication {
+public class WordCount {
 
     public static void main(String[] args) {
         if (args.length < 1) {
