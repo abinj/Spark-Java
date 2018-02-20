@@ -1,13 +1,13 @@
-#Apache Spark - Java
+**Apache Spark - Java**
 
 A repository for apache spark various examples in java.
 
 
-WordCount
+*WordCount*
 * This class is the hello world program of apache spark.
 * Its job is to count a specific word in a file.
 
-RDDPersist
+*RDDPersist*
 * RDDs are by default recomputed each time you run an action on them.
 * If you wou;d like to reuse a particular state of RDD in multiple actions,
  you can persist them with spark RDD.persist() method.
