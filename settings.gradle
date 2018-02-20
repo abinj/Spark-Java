@@ -1,3 +1,3 @@
 rootProject.name = 'sparkjava'
-include 'wordcount'
+include 'sparkbasicexamples'
 

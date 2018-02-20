@@ -20,7 +20,7 @@ tasks.withType(JavaCompile) {
 //create a single Jar with all dependencies
 task fatJar(type: Jar) {
     manifest {
-        attributes 'Implementation-Title': 'word-count',
+        attributes 'Implementation-Title': 'spark-basic-examples',
                 'Implementation-Version': version,
                 'Main-Class': 'com.adfolks.shukran.restapi.application.MainApplication'
     }
