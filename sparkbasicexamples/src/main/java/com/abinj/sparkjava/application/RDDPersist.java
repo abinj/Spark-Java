@@ -23,5 +23,6 @@ public class RDDPersist {
 
         System.out.println("Total no of lines:- " + lines.count());
         System.out.println("First line:- " + lines.first());
+        sc.stop();
     }
 }

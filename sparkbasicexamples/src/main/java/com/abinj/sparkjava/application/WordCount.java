@@ -37,5 +37,6 @@ public class WordCount {
         if (args.length == 2) {
             counts.saveAsTextFile(args[1]);
         }
+        sc.stop();
     }
 }
