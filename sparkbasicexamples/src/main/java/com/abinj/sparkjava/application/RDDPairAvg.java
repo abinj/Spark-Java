@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class RDDPairAction {
+public class RDDPairAvg {
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("sparkbasicexamples").setMaster("local");
@@ -26,12 +26,11 @@ public class RDDPairAction {
         JavaPairRDD<String, Integer> pair = sc.parallelizePairs(input);
 
         Function<Integer, AvgCount> createAcc = x -> new AvgCount(x, 1);
-        Function2<AvgCount, Integer, AvgCount> addAndCount = (AvgCount x, Integer y) -> {
-            return new AvgCount(x.getTotal_() + y, x.getNum_() + 1);
-        };
-        Function2<AvgCount, AvgCount, AvgCount> combine = (AvgCount x, AvgCount y) -> {
-            return new AvgCount(x.getTotal_() + y.getTotal_(), x.getNum_() + y.getNum_());
-        };
+        Function2<AvgCount, Integer, AvgCount> addAndCount =
+                (AvgCount x, Integer y) -> new AvgCount(x.getTotal_() + y, x.getNum_() + 1);
+        Function2<AvgCount, AvgCount, AvgCount> combine =
+                (AvgCount x, AvgCount y) ->
+                        new AvgCount(x.getTotal_() + y.getTotal_(), x.getNum_() + y.getNum_());
 
         JavaPairRDD<String, AvgCount> avg = pair.combineByKey(createAcc, addAndCount, combine);
         Map<String, AvgCount> avgMap = avg.collectAsMap();
