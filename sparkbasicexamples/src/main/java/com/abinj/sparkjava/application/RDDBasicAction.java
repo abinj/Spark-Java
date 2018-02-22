@@ -6,7 +6,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 import java.util.Arrays;
 
-public class RDDBasicActions {
+public class RDDBasicAction {
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("sparkbasicexamples").setMaster("local");
