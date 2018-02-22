@@ -9,10 +9,12 @@ import org.apache.spark.api.java.function.PairFunction;
 import scala.Tuple2;
 
 import java.util.Arrays;
+import java.util.Map;
 
 /** Read the files and count the occurrences of a specific word
  * arg_1 is input file path
  * arg_2 is output file path
+ * There are two ways to do this ##1 and ##2
  * **/
 public class WordCount {
 
@@ -25,6 +27,7 @@ public class WordCount {
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> file = sc.textFile(args[0]);
 
+        //##1
         JavaRDD<String> words = file.flatMap(
                 (FlatMapFunction<String, String>) line -> Arrays.asList(line.split(" ")).iterator());
         JavaPairRDD<String, Integer> counts = words.mapToPair(
@@ -37,6 +40,16 @@ public class WordCount {
         if (args.length == 2) {
             counts.saveAsTextFile(args[1]);
         }
+
+
+        //##2
+        Map<String, Long> wordCounts = file.flatMap(
+                (FlatMapFunction<String, String>) line -> Arrays.asList(line.split(" ")).iterator())
+        .countByValue();
+        for (Map.Entry<String, Long> entry : wordCounts.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
         sc.stop();
     }
 }
