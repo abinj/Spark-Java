@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class RDDPairAvg {
+public class RDDPairAction {
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("sparkbasicexamples").setMaster("local");
