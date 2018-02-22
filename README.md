@@ -19,7 +19,9 @@ A repository for apache spark various examples in java.
 *RDDPairAvg*
 
 *combineByKey() is the most general of the per-key aggregation functions.
+
 *Like aggregate() , combineByKey() allows the user to return values that are not the same type as our input data.
+
 *As combineByKey() goes through the elements in a partition,If it’s a new element, combineByKey() uses a function
  we provide, called createCombiner() , to create the initial value for the accumulator on that key.
  
