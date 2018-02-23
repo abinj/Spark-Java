@@ -1,4 +1,4 @@
-{"id": "1", "name": "joan", "age": "25", "gender": "M"}
-{"id": "2", "name": "Sam", "age": "25", "gender": "M"}
-{"id": "3", "name": "Michele", "age": "25", "gender": "F"}
-{"id": "4", "name": "Riya", "age": "25", "gender": "F"}
+{"id": "1", "name": "joan", "age": 25, "gender": "M"}
+{"id": "2", "name": "Sam", "age": 25, "gender": "M"}
+{"id": "3", "name": "Michele", "age": 25, "gender": "F"}
+{"id": "4", "name": "Riya", "age": 25, "gender": "F", "meta": {"designation": "CEO"}}
