@@ -79,8 +79,11 @@ public class RDDPairAction {
         }
 
 
-
-
+        //sortByKey(), Return an RDD sorted by the key.
+        List<Tuple2<String, Integer>> sortResult = pair.sortByKey().collect();
+        for (Tuple2<String, Integer> entry : sortResult) {
+            System.out.println(entry._1() + ": " + entry._2());
+        }
         sc.stop();
     }
 
