@@ -22,7 +22,7 @@ task fatJar(type: Jar) {
     manifest {
         attributes 'Implementation-Title': 'spark-basic-examples',
                 'Implementation-Version': version,
-                'Main-Class': 'com.adfolks.shukran.restapi.application.MainApplication'
+                'Main-Class': 'com.abinj.sparkjava.application.MainApplication'
     }
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
