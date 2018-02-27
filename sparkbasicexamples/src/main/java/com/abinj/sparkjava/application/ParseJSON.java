@@ -32,7 +32,7 @@ public class ParseJSON {
                 .getOrCreate();
         RDD<String> input = sparkSession.sparkContext().textFile(args[0], 2);
         JavaRDD<Person> result = input.toJavaRDD().map(stringInput -> new ObjectMapper().readValue(stringInput, Person.class));
-        JavaRDD<String> formatted = result.map(jsonInput -> new ObjectMapper().writeValueAsString(jsonInput));
+        JavaRDD<String> formatted = result.map(person -> new ObjectMapper().writeValueAsString(person));
         formatted.saveAsTextFile(args[1]);
 
 
