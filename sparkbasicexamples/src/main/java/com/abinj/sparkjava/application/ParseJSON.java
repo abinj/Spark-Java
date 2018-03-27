@@ -1,10 +1,8 @@
 package com.abinj.sparkjava.application;
 
 import com.abinj.sparkjava.models.Person;
-import org.apache.spark.SparkConf;
 
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.spark.rdd.RDD;
