@@ -36,3 +36,14 @@ A repository for apache spark various examples in java.
  for the same key. When we are merging the results from each partition, if two or
  more partitions have an accumulator for the same key we merge the accumulators
  using the user-supplied mergeCombiners() function.
+ 
+ *ExplodeJSON*
+ 
+ *This class demonstrate how to flatten an array inside of a json
+ 
+ 
+ *ParseCSV*
+ 
+ *This class take the csv file as input and compute groupBy using the specified columns.
+ 
+ 

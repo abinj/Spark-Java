@@ -1,18 +1,1 @@
-{
-  "Name":"Abin Joy",
-  "Email":"abinmj656@gmail.com",
-  "Designation":"Machine Learning Engineer",
-  "Age":25 ,
-  "location": {
-    "City": {
-    "Pin":686671,
-    "City Name":"Ernakulam"
-  },
-    "State":"Kerala"
-  },
-  "Company": {
-    "Company Name":"Dexlock",
-    "Domain":"Java"
-  },
-  "Test":["Test1","Test2"]
-}
+{"Name":"Abin Joy", "Email":"abinmj656@gmail.com", "Designation":"Machine Learning Engineer", "Age":25 , "location": {"City": {"Pin":686671, "City Name":"Ernakulam"}, "State":"Kerala"}, "Company": {"Company Name":"Dexlock", "Domain":"Java"},"Test":["Test1","Test2"]}

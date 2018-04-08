@@ -1,16 +1,13 @@
 package com.abinj.sparkjava.application;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SQLContext;
-import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.*;
 
 public class ExplodeJSON {
 
     public static void main(String[] args) {
-//        if (args.length < 1) {
-//            System.out.println("Arguments required:- [input json file path]");
-//        }
+        if (args.length < 1) {
+            System.out.println("Arguments required:- [input json file path]");
+        }
         SparkSession spark = SparkSession
                 .builder()
                 .master("local")
@@ -19,7 +16,10 @@ public class ExplodeJSON {
 
         SQLContext sqlContext = new SQLContext(spark);
         Dataset<Row> peopleDF =
-                sqlContext.read().format("json").load("/home/abin/my_space/java_backend/git_works/Spark-Java/sparkbasicexamples/src/main/resources/assets/explode_test_data.json");
+                sqlContext.read().format("json").load(args[0]);
+        peopleDF = peopleDF.select(peopleDF.col("Name"), peopleDF.col("Email"), peopleDF.col("Designation")
+                , peopleDF.col("Age"), peopleDF.col("location"), peopleDF.col("Company")
+                , org.apache.spark.sql.functions.explode(peopleDF.col("Test")).as("Test"));
         peopleDF.printSchema();
         peopleDF.show();
 
